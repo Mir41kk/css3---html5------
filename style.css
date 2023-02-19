@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+:root{
+    --background-color: #2b324d;
+    --font-color: white ;
+    --form-background: #3b3b3b;
+}
+html , body{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--background-color);
+}
+form{
+    position: relative;
+    display: block;
+    width: 25vw;
+    height: 60vh;
+    margin: 0 auto;
+    top: calc(50% - 60vh / 2);
+    background-color: var(--form-background);
+    border-radius: 30px ;
+    box-shadow: 0 0 20px #2b2b2b;
+    padding: 3% 0;
+}
+input{
+    position: relative;
+    display: block;
+    padding: 2px;
+    font-family: 'Lobster';
+    font-size: 1.5em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin: 7% auto;
+    color: var(--font-color);
+}
+input#color{
+    width: 4.5vw;
+    height: 7vh;
+    border: 0;
+    float: left;
+    margin: 0% 13.1%;
+}
+input:focus{
+    outline: none;
+}
+input[type=email]:focus:invalid{
+    outline: 1px solid tomato;
+    
+}
+input[type=email]:focus:valid{
+    outline: transparent 1px;
+    
+}
+input[type=text]:focus:invalid{
+    outline: 1px solid tomato;
+}
+
+input[type=password]:focus:invalid{
+    outline: 1px solid tomato;
+}
+input[type=submit]{
+    border: 0;
+    float: right;
+    margin: 3% 15%;
+    font-size: 2em;
+}
+main{
+    margin-top: 30vh ;
+}
+table{
+    color: white;
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+td:nth-child(even){
+    color: yellow;
+}
+td:nth-child(odd){
+    color: aqua;
+}
+.box{
+    position: relative;
+    display: block;
+    width: 20vw;
+    height: 20vh;
+
+    margin: 10vh auto;
+}
+.gradient{
+    background: linear-gradient(to right, blue, pink);
+}
+.frame {
+    display: block;
+    margin: 0 auto;
+    width: 270px;
+    height: 270px;
+    border: 50px solid transparent;
+    border-image: url('./pngwing.com.png') 50 stretch stretch;
+  }
+.frame img{
+   width: 100%;
+   height: 100%;
+   transition: 0.5s;
+}
+.frame img:hover{
+    filter: grayscale(1);
+}
+.white{
+    background-color: white;
+}
+.radius{
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.radius:hover{
+    transform: rotateX(180deg);
+}
+.shadow{ 
+    box-shadow:0px 0px 10px 5px #ff0000 inset; 
+}
+.container {
+    width: 150px;
+    height: 150px;
+    margin: 50px auto 0;
+  /*   border: 2px dotted white; */
+    perspective: 1000px;
+    perspective-origin: center -150px;
+    transform-style: preserve-3d;
+    animation: rotateY 10s infinite linear;
+  }
+  
+  @keyframes rotateY {
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .side {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    opacity: .5;
+    background: white;
+  }
+  
+  .back {
+    transform: translateZ(-150px);
+  }
+  
+  .front {
+    transform: translateZ(150px);
+  }
+  
+  .left {
+    transform: translateX(-150px) rotateY(90deg);
+  }
+  
+  
+  .right {
+    transform: translateX(150px) rotateY(90deg);
+  }
+  
+  .top {
+    transform: translateY(-150px) rotateX(90deg);
+  }
+  
+  .bottom {
+    transform: translateY(150px) rotateX(90deg);
+  }
+  .ball{
+    position: relative;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius:25px;
+    background-color: white;
+    animation: ball 5s infinite alternate linear;
+  }
+  @keyframes ball {
+    from{
+        top: 0;
+        left:0;
+    }
+    to{
+        top: 270%;
+        left: 97%;
+    }
+  }
